@@ -1,0 +1,46 @@
+{
+  "input": {
+    "bins": 25,
+    "gallons": 200
+  },
+  "output": {
+    "faithfull_hist": {
+      "src": "[image data sha1: 04618a45a787194413d3e8199b25197831fa7ba0]",
+      "width": 631,
+      "height": 400,
+      "coordmap": {
+        "panels": [
+          {
+            "domain": {
+              "left": 1.46,
+              "right": 5.24,
+              "bottom": -0.0352941176470588,
+              "top": 0.917647058823529
+            },
+            "range": {
+              "left": 59.0400093565783,
+              "right": 600.759995207606,
+              "bottom": 325.559981639995,
+              "top": 58.0400147600037
+            },
+            "log": {
+              "x": null,
+              "y": null
+            },
+            "mapping": {
+
+            }
+          }
+        ],
+        "dims": {
+          "width": 631,
+          "height": 400
+        }
+      }
+    },
+    "liters": "757"
+  },
+  "export": {
+
+  }
+}
