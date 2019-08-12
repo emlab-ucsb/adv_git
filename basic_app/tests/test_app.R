@@ -1,7 +1,4 @@
-library(here)
-library(shinytest)
-
-app <- ShinyDriver$new(here("basic_app"))
+app <- ShinyDriver$new("../")
 app$snapshotInit("test_app")
 
 app$snapshot()
