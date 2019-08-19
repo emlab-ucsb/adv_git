@@ -37,7 +37,7 @@ Commands that we'll use:
 - `git checkout -b NEW_BRANCH_NAME` to create a new branch and switch into it
 - `git reset HASH` to rewrite a file
 - `git commit` to commit changes
-- `git merge` to update changes
+- `git merge` to bring changes from one branch into another
 - `git tag -a VERSION -m "TAG MESSAGE"` to tag a commit
 - `git push`
 
