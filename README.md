@@ -81,7 +81,6 @@ It should show a compressed history of all commit messages
 
 ```
 git logone
-
 ```
 
 It should show similar info
