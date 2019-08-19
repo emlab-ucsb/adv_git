@@ -41,6 +41,58 @@ Commands that we'll use:
 - `git tag -a VERSION -m "TAG MESSAGE"` to tag a commit
 - `git push`
 
+## How to prepare
+
+### R
+
+```
+install.packages("shiny")
+install.packages("testthat")
+install.packages("shinytest")
+```
+### Your system
+
+Not sure this will work on everyone's computer, but try the following.
+
+1) Copy and paste the following code into your prefered terminal:
+
+```
+git config --global alias.logline "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+```
+
+2) Now this:
+
+```
+git config --global alias.logone "log --pretty=oneline"
+```
+
+This will create aliases so that we can call very long commands just using `git logline` and `git logone`.
+
+3) In your computer, open any Rproject that has a repo. Go to the RStudio terminal (not the Console!) and type:
+
+```
+git logline
+```
+
+It should show a compressed history of all commit messages
+
+4) Now type:
+
+```
+git logone
+
+```
+
+It should show similar info
+
+Let me know if something is not working.
 
 
-There are two files that have bugs. One is in the app, the other one is in a function.
+
+
+
+
+
+
+
+
