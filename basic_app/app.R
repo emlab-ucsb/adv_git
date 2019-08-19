@@ -12,7 +12,7 @@ library(here)
 library(shiny)
 
 # Load functions
-source(here("basic_app", "functions", "gal2lit.R"))
+source(here("R", "gal2lit.R"))
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(

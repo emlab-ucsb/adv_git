@@ -7,6 +7,11 @@
 #' @return The equivalent, in liters
 #'
 gal2lit <- function(gal) {
+  
+  if(!is.numeric(gal)) {
+    stop("Make sure gal is of class numeric")
+  }
+  
   lit <- gal * 3.785
   return(lit)
 }
