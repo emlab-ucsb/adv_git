@@ -1,4 +1,4 @@
-# Repository
+# Playing with advanced git
 
 
 ## Repository structure 
