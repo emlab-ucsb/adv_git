@@ -22,7 +22,7 @@
 
 As seen in the `repository structure` section above, this repo contains an R package and a ShinyApp (`basic_app`). Each has its own set of tests. The tests for the package are under `tests`, and the tests for the app are under `basic_app/tests`.
 
-For the package, we are using a simple (`testthat`)[https://testthat.r-lib.org/index.html] workflow. For the ShinyApp, we are using the (`shinytest`)[https://rstudio.github.io/shinytest/] package (which is inspired in and uses `testthat`).
+For the package, we are using a simple [`testthat`](https://testthat.r-lib.org/index.html) workflow. For the ShinyApp, we are using the [`shinytest`](https://rstudio.github.io/shinytest/) package (which is inspired in and uses `testthat`).
 
 ## Using `git` to debug code in your repo
 
