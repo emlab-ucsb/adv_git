@@ -24,10 +24,23 @@ As seen in the `repository structure` section above, this repo contains an R pac
 
 For the package, we are using a simple (`testthat`)[https://testthat.r-lib.org/index.html] workflow. For the ShinyApp, we are using the (`shinytest`)[https://rstudio.github.io/shinytest/] package (which is inspired in and uses `testthat`).
 
-## Using `git` to debug a repository
+## Using `git` to debug code in your repo
+
+Commands that we'll use:
+
+- `git status` tells the status of our repository
+- `git log --pretty=oneline` shows the commit history (nicely)
+- `git bisect [start, good, bad]` start bisecting, and tag each commit as good or bad (based on test runs)
+- `git bisect reset` once we've identified the "breaking point", come back to the present
+- `git branch` to inspect existing branches
+- `git ckeckout BRANCH_NAME` switch branches
+- `git checkout -b NEW_BRANCH_NAME` to create a new branch and switch into it
+- `git reset HASH` to rewrite a file
+- `git commit` to commit changes
+- `git merge` to update changes
+- `git tag -a VERSION -m "TAG MESSAGE"` to tag a commit
+- `git push`
+
+
 
 There are two files that have bugs. One is in the app, the other one is in a function.
-
---------- 
-
-<a href="https://orcid.org/0000-0003-1245-589X" target="orcid.widget" rel="noopener noreferrer" style="vertical-align:top;"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon">orcid.org/0000-0003-1245-589X</a>
