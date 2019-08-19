@@ -5,8 +5,8 @@ source(here("R", "gal2lit.R"))
 
 context("gal2lit converts correctly")
 test_that("gal2lit", {
-  expect_equal(gal2lit(1), 3.785)
-  expect_equal(gal2lit(1/3.785), 1)
+  expect_equal(gal2lit(1), 3.78541)
+  expect_equal(gal2lit(1/3.78541), 1)
 })
 
 context("gal2lit handles input types")
