@@ -233,6 +233,32 @@ class: center, middle, inverse
 
 ---
 
+# Shiny Apps
+
+- The shiny app is under `basic_app/app.R`
+
+- Run `shiny::runApp("basic_app")` or open the file and run the app
+
+- Stop the instance
+
+- Now let's run the tests:
+
+  - Run `shinytest::testApp("basic_app")` or
+  
+  - Open the `app.R` file
+  
+  - Top-right corner, click on `Run App` &gt;&gt; `Run Tests`
+  
+  - Top-right corner, click on `Compare Results`
+  
+- Inspect the differences:
+
+  - The app is not returning the correct conversion of gallons to liters
+  
+  - But is this an error in the app, or in the underlying code?
+
+---
+
 # Packages / functions
 
 - In your root directory for the repo, look for a `tests` folder
@@ -243,7 +269,7 @@ class: center, middle, inverse
 
 - To test the package (*i.e.* run all tests):
 
-    - You can run 
+    - You can run `devtools::test()`
     
     - Take advantage of the Rstudio IDE:
     
@@ -281,13 +307,90 @@ Failed:   2
 Warnings: 0
 Skipped:  0
 ```
+
+---
+
+class: center, middle, inverse
+
+# Well 💩, 💩, 💩, 💩, 💩, 💩, 💩
+
+Turns out our basic function is not working...
+
+Now what?
+
+We (sort of?) know *where* the error is (this is an easy one)
+
+But *when* / *how* / *why* / (*who???* 😠)?
+
+Enter: `git bisect`
+
+
+---
+
+# `git bisect`
+
+## Why not go into GitHub?
+
+- You want to be able to track incremental changes
+
+- If you use the `git bisect` approach, no need to leave RStudio!
+
+---
+
+# `git bisect`
+
+## What does it do?
+
+- You start by telling it that the present commit (state of the repo) is `bad`
+
+- You then tell it when things worked (remember `tags`?)
+
+- It choses a point (roughly) between them and checks out a version of how things looked like
+
+- Then, you iterate:
+
+    - Running your tests
+    
+    - Tagging each commit as `good` or `bad`
+    
+    - `git bisect` will advance in the logical direction
+
+    -  Do until it finds the last good commit
+
+---
+
+# `git bisect`
+
+## Workflow
+
+
+```bash
+git bisect start #Start bisecting
+git bisect bad #Tagg current state as bad
+git bisect good HASH #Specify a state where things worked
+
+# git bisect will take you to somewhere in the middle
+
+**Run tests in R**
+
+# If it works
+git bisect good
+#marks this point as working and moves forward in time
+
+# If it fails
+git bisect bad
+#marks this pointas not working and moves backward in time
+
+**Run tests in R**
+...
+```
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
 "highlightStyle": "github",
 "highlight.output": true,
-"highlightLines": true,
+"highlightLines": false,
 "countIncrementalSlides": false
 });
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
