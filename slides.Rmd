@@ -1,7 +1,7 @@
 ---
 title: "Advanced `git`"
 subtitle: "Best practices and debugging"
-author: "JC"
+author: "`r emo::ji('insect')`, `r emo::ji('insect')`, `r emo::ji('insect')`, `r emo::ji('insect')`, `r emo::ji('insect')`, `r emo::ji('insect')`, `r emo::ji('insect')`"
 institute: "SFG"
 date: "2019/08/21"
 output:
