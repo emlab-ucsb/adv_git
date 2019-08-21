@@ -21,23 +21,23 @@ options(htmltools.dir.version = FALSE)
 
 If you haven't, `fork` and `clone` the repo from: [https://github.com/emlab-ucsb/adv_git.git](https://github.com/emlab-ucsb/adv_git.git)
 
-- Best practices
+- Boring
 
-- Repo tour
-
-- Testing your code
-
-  - `shiny` Apps
+  - Best practices
   
-  - functions / packages
-  
-- Finding the error
+- Hands-on
 
-- Fixing the error
-
-  - internal
+  - Repo tour
   
-  - external 
+  - Tests
+
+      - `shiny` Apps
+  
+      - functions / packages
+  
+  - Finding the error
+
+  - Fixing the error
 
 
 ---
@@ -75,14 +75,49 @@ class: center, middle, inverse
 - You don't have to `push` all your changes
 
   - `commit` through the day, and `push` at the end
+
+
+---
+
+# Testing your code
+
+Create tests for possible breaks:
+
+- Test for data integrity
+
+  - Number of records
   
+  - Dimensions of a key `data.frame`
+  
+  - Dates in your `Raster*` objects
+    
+- Test for function behavior
+
+  - Returns correct output
+  
+  - Handles `NA`s or `NULL`s correctly
+  
+  - Test for know breaks
+  
+--
+
+**Test before pushing big changes**
+
 ---
 
 # Using tags
 
-- If something (ever) works, mark it
+If something (ever) works, mark it!
 
-- `git tag -a version -m "message"` works great
+- After your `commit`, you can do:
+
+- `git tag -a version -m "message"`
+
+
+
+---
+
+# Using tags
 
 In the repo, try:
 
@@ -116,4 +151,29 @@ or
 ```
 git logone
 ```
+---
 
+class: center, middle, inverse
+
+# Repo tour
+
+---
+
+# Repo
+
+```
+-- adv.Rproj
+-- basic_app
+   |__app.R
+   |__tests
+-- DESCRIPTION
+-- man
+   |__gal2lit.Rd
+-- NAMESPACE
+-- R
+   |__gal2lit.R
+-- README.md
+-- tests
+   |__testthat
+   |__testthat.R
+```
