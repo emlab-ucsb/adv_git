@@ -12,6 +12,6 @@ gal2lit <- function(gal) {
     stop("Make sure gal is of class numeric")
   }
   
-  lit <- gal * 3.785
+  lit <- gal * 3.78541
   return(lit)
 }
