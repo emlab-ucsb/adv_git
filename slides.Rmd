@@ -356,13 +356,13 @@ Enter: `git bisect`
 
 # `git bisect`
 
-## Workflow
+## Workflow: finding
 
 ```{bash}
+git logline #To see the history
 git bisect start #Start bisecting
 git bisect bad #Tagg current state as bad
-git bisect good HASH #Specify a state where things worked
-
+git bisect good HASH / tag #Specify a state where things worked
 # git bisect will take you to somewhere in the middle
 
 **Run tests in R**
@@ -370,58 +370,72 @@ git bisect good HASH #Specify a state where things worked
 # If it works
 git bisect good
 #marks this point as working and moves forward in time
-
 # If it fails
 git bisect bad
 #marks this pointas not working and moves backward in time
 
 **Run tests in R**
-...
+... #Until test pass
 ```
 
 ---
 
 # `git bisect`
 
-## Workflow
+## Workflow: fixing
 
 We know *when* (*i.e.* HASH) things changed, let's dig deeper:
 
-- `git bisect reset` to go back to the present
+```{bash}
+git bisect reset #Exit bisect mode (go back to the present)
 
-Check the changes of the guilty `commit` with:
+git show HASH #Check the changes of the guilty commit
+```
 
-- `git show HASH`
+
+---
+
+# `git bisect`
+
+## Workflow: fixing
+
+![](img/git_show_hash.PNG)
+
+---
 
 Let's fix the problem:
 
-- `git branch` to check existing branches
+```{bash}
+git branch #To check existing branches
 
-- `git checkout -b fix_bug` to create a new branch and switch into it
+git checkout -b fix_bug #To create a new branch and switch into it
 
-- `git revert HASH` will undo changes in that commit
+git revert HASH #Will undo changes in that commit
 
-- It is equivalent to just making the change yourself in `gal2lit.R` and `add` and `commit` the result
+# It is equivalent to just making the change yourself
+# in `gal2lit.R` and `add` and `commit` the result
 
+**Run tests in R**
+```
 ---
 
 # `git bisect`
 
 ## Workflow
 
-- Run your tests
+```{bash}
+git checkout master #Get back to master branch
 
-- `git checkout master` to get back to `master`
+git branch #Confirm that you are on master
 
-- `git branch` to confirm that you are on `master`
+git merge fix_bug master #Bring the changes in fix_bug into master
 
-- `git merge fix_bug master` to bring the changes in `fix_bug` into master
+**Run tests in R** #optional, at this point
 
-- Run tests (optional)
+git tag -a vx.x -m "Fixed bug" #(Optionally, add a tag)
 
-- `git tag -a vx.x -m "Fixed bug"` (Optionally, add a tag)
-
-- `git push`
+git push #Push changes
+```
 
 
 
