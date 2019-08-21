@@ -320,7 +320,7 @@ Now what?
 
 We (sort of?) know *where* the error is (this is an easy one)
 
-But *when* / *how* / *why* / (*who???* 😠)?
+But *when* / *how* / *why* / (**who???** 😠)?
 
 Enter: `git bisect`
 
@@ -332,6 +332,8 @@ Enter: `git bisect`
 ## Why not go into GitHub?
 
 - You want to be able to track incremental changes
+
+- Let's you see how changes relate to tests / status of the repo
 
 - If you use the `git bisect` approach, no need to leave RStudio!
 
@@ -384,6 +386,50 @@ git bisect bad
 **Run tests in R**
 ...
 ```
+
+---
+
+# `git bisect`
+
+## Workflow
+
+We know *when* (*i.e.* HASH) things changed, let's dig deeper:
+
+- `git bisect reset` to go back to the present
+
+Check the changes of the guilty `commit` with:
+
+- `git show HASH`
+
+Let's fix the problem:
+
+- `git branch` to check existing branches
+
+- `git checkout -b fix_bug` to create a new branch and switch into it
+
+- `git revert HASH` will undo changes in that commit
+
+- It is equivalent to just making the change yourself in `gal2lit.R` and `add` and `commit` the result
+
+---
+
+# `git bisect`
+
+## Workflow
+
+- Run your tests
+
+- `git checkout master` to get back to `master`
+
+- `git branch` to confirm that you are on `master`
+
+- `git merge fix_bug master` to bring the changes in `fix_bug` into master
+
+- Run tests (optional)
+
+- `git tag -a vx.x -m "Fixed bug"` (Optionally, add a tag)
+
+- `git push`
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
