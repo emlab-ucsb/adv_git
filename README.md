@@ -1,5 +1,7 @@
 # Playing with advanced git
 
+## Slides are [here](https://emlab-ucsb.github.io/adv_git/slides.html#1)
+
 Make sure that you `fork` the repo, and then clone the one at `your_username/git_adv` int your computer. We want to make sure there are no user restrictions.
 
 ## Repository structure 
